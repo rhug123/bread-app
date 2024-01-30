@@ -109,11 +109,11 @@ st.subheader('Recipe Steps')
 st.markdown('Gather Ingredients')
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%201.mp4', start_time=0)
 st.markdown('Mix dry ingredients together in a bowl.')
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 2.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%202.mp4', start_time=0)
 st.markdown('After dry ingredients are mixed, add portion of cold water and mix. Do this until all the water is poured in. Once completely mixed, put plastic wrap over bowl and put in cooler/reusable refrigerator grocery bag. Cold water is used to add more time to the bulk fermentation time, which will add to the flavor of the bread.')
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 3.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%203.mp4', start_time=0)
 st.markdown('After 30 minutes, stretch and fold a few times around the bowl. This help to form the gluten structure, which will help increase the oven spring.')
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 4.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%204.mp4', start_time=0)
 st.markdown("""Wait {} hours then place dough in fridge for 15 minutes. This step is just to make the next shaping step easier, but can be skipped.  
 
 Next, get a piece of parchment paper and put a light amount of corn meal or flour on it.  
@@ -124,10 +124,10 @@ Once in a ball, tuck the dough underneath itself on all sides to further form a 
 
 Once finished, lift and put dough on parchment paper which has cornmeal or flour sprinkled on it. Lift parchment paper that now has the dough on it back into bowl and cover for another 2 hours.  
 You will need to preheat your oven after 1.5 hours to 470 degrees with dutch oven inside.""".format(bulk_time))
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 5.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%205.mp4', start_time=0)
 st.markdown("""After 2 hours, score bread (scissors are easiest but not necessarily the best),lift parchment paper into dutch oven, dust top of dough with corn meal, place lid on dutch oven and place into oven at 450 degrees.""")
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 6.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%206.mp4', start_time=0)
 st.markdown(" Bake for 35 minutes with lid on, and 5 minutes with the lid off.")
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 7.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%207.mp4', start_time=0)
 st.markdown("Place on cooling rack for at least 30 minutes. The bread is still cooking on the inside when it's cooling.")
-st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 8.mp4', start_time=0)
+st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%208.mp4', start_time=0)
