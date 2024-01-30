@@ -107,7 +107,7 @@ Cold Water:         {:,.2f} Cups ({:,.1f} grams)""".format(flour_cups,flour_gram
 
 st.subheader('Recipe Steps')
 st.markdown('Gather Ingredients')
-st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread_Video_1.mp4', start_time=0)
+st.video(r"https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread_Video_1.mp4", start_time=0)
 st.markdown('Mix dry ingredients together in a bowl.')
 st.video('/Users/rhug/Documents/Bread Videos/bread videos/Bread Video 2.mp4', start_time=0)
 st.markdown('After dry ingredients are mixed, add portion of cold water and mix. Do this until all the water is poured in. Once completely mixed, put plastic wrap over bowl and put in cooler/reusable refrigerator grocery bag. Cold water is used to add more time to the bulk fermentation time, which will add to the flavor of the bread.')
