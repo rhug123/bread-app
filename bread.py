@@ -36,7 +36,7 @@ st.sidebar.markdown('estimated cost ${:,.2f}'.format(estimated_cost))
 
 cooler_bag = st.sidebar.radio('Are you bulk fermenting in a cooler or cooler bag?',['yes','no'])
 #temperature = st.sidebar.number_input('what temperature in degrees F is your environment?',70)
-t = dt.datetime.now() - dt.timedelta(hours = 5)
+t = dt.datetime.now()
 t = t.replace(minute = (t.minute//15) * 15)
 year = t.year
 month = t.month
