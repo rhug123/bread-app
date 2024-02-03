@@ -32,10 +32,6 @@ st.sidebar.markdown('estimated cost ${:,.2f}'.format(estimated_cost))
 
 
 
-
-
-
-
 cooler_bag = st.sidebar.radio('Are you bulk fermenting in a cooler or cooler bag?',['yes','no'])
 #temperature = st.sidebar.number_input('what temperature in degrees F is your environment?',70)
 tz = pytz.timezone('EST')
