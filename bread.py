@@ -72,11 +72,11 @@ st.sidebar.subheader('Sparknote Recipe')
 st.sidebar.markdown("""1. Mix dry ingredients together
 2. Mix in water. 
 3. Stretch and fold after 30 minutes.
-4. Place in cooler for {} hours.
+4. Place in cooler or on countertop for {} hours.
 5. After optional 15 minute cool, coil fold and shape dough.
 6. Put on parchment paper with corn meal and let rest for 2 hour final proof
-7. Preaheat oven with dutch oven inside to 470 degrees.
-8. Once oven is preheated, lower to 450 degrees, and place in dutch oven with lid on. After 35 minutes, remove lid for final 5 minute bake
+7. Preaheat oven with dutch oven inside to 470°.
+8. Once oven is preheated, lower to 450°, and place in dutch oven with lid on. After 35 minutes, remove lid for final 5 minute bake
 9. Remove bread from dutch oven and place on cooling rack. Wait 30 minutes before eating as steam inside is still baking bread.""".format(bulk_time))
 st.sidebar.subheader('Schedule')
 
@@ -88,10 +88,10 @@ st.sidebar.markdown("""{} - Combine Ingredients
 {} - Stretch and fold  
 {} - Coil fold and final proof.  
 {} - Preheat oven  
-{} - Bake for 35 minutes at 350 degrees  
+{} - Bake for 35 minutes at 350°  
 {} - Bake without lid for 5 minutes  
 {} - Cool for 30 minutes  
-{} - Bread is ready""".format(combine_ingredients,fold1,fold2,preheat,bake1,bake2,cool,bread_finished))
+{} - Bread is ready""".format(combine_ingredients.strftime(d_format),fold1.strftime(d_format),fold2.strftime(d_format),preheat.strftime(d_format),bake1.strftime(d_format),bake2.strftime(d_format),cool.strftime(d_format),bread_finished.strftime(d_format)))
 
 
 #st.markdown("use cold water instead of warm water. this should slow down the fermentation time and allow more time to develop flavor. also, since yeast is okay in cold environments (and not hot), we do not have to worry about the water being too cold. it also will prioritize the autolyse process in the beginning. We also want to increase the salt amount to increase flavor. The tradeoff to the increase in salt is it acts as an inhibitor to yeast growth. This combined with the addition of cold water which also slows yeast growth means we will double the amount of yeast in the original recipe from .25tsp to .5tsp. The fridge to cooler transition should also help the repeatability of the process, since it is not being exposed to ambient temperature directly, it should produce nearly the same results regardless of external environment.")
@@ -105,7 +105,7 @@ st.text("""
 Flour:              {:,.2f} Cups ({:,.1f} grams)
 Salt (Kosher):      {:,.2f} Tablespoons ({:,.1f} grams)
 Yeast:              {:,.2f} Teaspoons ({:,.1f} grams)
-Cold Water:         {:,.2f} Cups ({:,.1f} grams)""".format(flour_cups,flour_grams,(salt_grams / salt_grams_per_tablespoon),salt_grams,(yeast_grams * yeast_grams_per_teaspoon),yeast_grams,(water_grams / water_grams_per_cup),water_grams))
+Cold Water (37°):   {:,.2f} Cups ({:,.1f} grams)""".format(flour_cups,flour_grams,(salt_grams / salt_grams_per_tablespoon),salt_grams,(yeast_grams * yeast_grams_per_teaspoon),yeast_grams,(water_grams / water_grams_per_cup),water_grams))
 
 
 
@@ -127,9 +127,9 @@ Wet your hands with cold water and do coil folds while dough is still in the bow
 Once in a ball, tuck the dough underneath itself on all sides to further form a ball shape, and to build tension.  
 
 Once finished, lift and put dough on parchment paper which has cornmeal or flour sprinkled on it. Lift parchment paper that now has the dough on it back into bowl and cover for another 2 hours.  
-You will need to preheat your oven after 1.5 hours to 470 degrees with dutch oven inside.""".format(bulk_time))
+You will need to preheat your oven after 1.5 hours to 470° with dutch oven inside.""".format(bulk_time))
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%205.mp4', start_time=0)
-st.markdown("""After 2 hours, score bread (scissors are easiest but not necessarily the best),lift parchment paper into dutch oven, dust top of dough with corn meal, place lid on dutch oven and place into oven at 450 degrees.""")
+st.markdown("""After 2 hours, score bread (scissors are easiest but not necessarily the best),lift parchment paper into dutch oven, dust top of dough with corn meal, place lid on dutch oven and place into oven at 450°.""")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%206.mp4', start_time=0)
 st.markdown(" Bake for 35 minutes with lid on, and 5 minutes with the lid off.")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%207.mp4', start_time=0)
