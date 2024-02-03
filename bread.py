@@ -1,5 +1,6 @@
 import streamlit as st
 import datetime as dt
+import time
 import pytz
 
 st.title('No Knead Bread')
@@ -45,22 +46,23 @@ month = t.month
 day = t.day
 hour = t.hour
 minute = t.minute
-bulk_time = 18 if cooler_bag == 'yes' else 15
+bulk_time = 17 if cooler_bag == 'yes' else 14
 start_date = st.sidebar.date_input('Start Date',dt.date(year,month,day))
 start_time = st.sidebar.time_input('Start Time', dt.time(hour,minute))
 start_date_time = dt.datetime.combine(start_date,start_time)
 
 d_format = '%x %r'
-combine_ingredients = start_date_time.strftime(d_format)
-fold1 = (start_date_time + dt.timedelta(minutes=30)).strftime(d_format)
-fold2 = (start_date_time + dt.timedelta(hours = bulk_time)).strftime(d_format)
-preheat = (start_date_time + dt.timedelta(hours = bulk_time + 1.5)).strftime(d_format)
-bake1 = (start_date_time + dt.timedelta(hours = bulk_time + 2)).strftime(d_format)
-bake2 = (start_date_time + dt.timedelta(hours = bulk_time + 2,minutes=35)).strftime(d_format)
-cool = (start_date_time + dt.timedelta(hours = bulk_time + 2,minutes=40)).strftime(d_format)
-bread_finished = (start_date_time + dt.timedelta(hours = bulk_time + 3,minutes=10)).strftime(d_format)
+combine_ingredients = start_date_time
+fold1 = (start_date_time + dt.timedelta(minutes=30))
+fold2 = (start_date_time + dt.timedelta(hours = bulk_time))
+preheat = (start_date_time + dt.timedelta(hours = bulk_time + 2.5))
+bake1 = (start_date_time + dt.timedelta(hours = bulk_time + 3))
+bake2 = (start_date_time + dt.timedelta(hours = bulk_time + 3,minutes=35))
+cool = (start_date_time + dt.timedelta(hours = bulk_time + 3,minutes=40))
+bread_finished = (start_date_time + dt.timedelta(hours = bulk_time + 4,minutes=10))
 
-
+total_time = ((bread_finished - combine_ingredients).seconds // 60)
+normalized_time = 1 / total_time
 
 
 estimated_finish = start_date_time + dt.timedelta(hours = bulk_time) + dt.timedelta(hours = 3)
@@ -133,3 +135,25 @@ st.markdown(" Bake for 35 minutes with lid on, and 5 minutes with the lid off.")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%207.mp4', start_time=0)
 st.markdown("Place on cooling rack for at least 30 minutes. The bread is still cooking on the inside when it's cooling.")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%208.mp4', start_time=0)
+
+
+minutes_to_fold = (fold1-combine_ingredients).seconds // 60
+minutes_to_ferment = (fold2 - fold1).seconds // 60
+minutes_till_preheat = (preheat - fold2).seconds // 60
+minutes_till_bake1 = (bake1 - preheat).seconds // 60
+minutes_till_bake2 = (bake2 - bake1).seconds // 60
+minutes_till_cool = (cool - bake2).seconds // 60
+
+
+
+progress_texts = [':blue[time till stretch and fold]',':violet[fermentation time]',':blue[preheat oven]',':blue[bake for 35 minutes]',':blue[bake for 5 minutes with lid off]',':blue[let cool]',':blue[finished]']
+progress_times = [minutes_to_fold,minutes_to_ferment,minutes_till_preheat,minutes_till_bake1,minutes_till_bake2,minutes_till_cool,1]
+
+start = 0
+bar = st.sidebar.progress(0,'start')
+if st.sidebar.button("Start Making Bread", type="secondary"):
+    for texts,times in zip(progress_texts,progress_times):
+        for i in range(times):
+            bar.progress(round(start + normalized_time,1),texts)
+            time.sleep(60)
+            start += normalized_time
