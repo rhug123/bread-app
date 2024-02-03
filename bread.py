@@ -66,8 +66,8 @@ normalized_time = 1 / total_time
 
 
 estimated_finish = start_date_time + dt.timedelta(hours = bulk_time) + dt.timedelta(hours = 3)
-st.sidebar.text('{} Start Time'.format(combine_ingredients))
-st.sidebar.text('{} Finish Time'.format(bread_finished))
+st.sidebar.text('{} Start Time'.format(combine_ingredients.strftime(d_format)))
+st.sidebar.text('{} Finish Time'.format(bread_finished.strftime(d_format)))
 st.sidebar.subheader('Sparknote Recipe')
 st.sidebar.markdown("""1. Mix dry ingredients together
 2. Mix in water. 
