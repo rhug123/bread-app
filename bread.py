@@ -85,7 +85,7 @@ st.sidebar.markdown("""{} - Combine Ingredients
 {} - Stretch and fold  
 {} - Coil fold and final proof.  
 {} - Preheat oven  
-{} - Bake for 35 minutes at 350°  
+{} - Bake for 35 minutes at 450°  
 {} - Bake without lid for 5 minutes  
 {} - Cool for 30 minutes  
 {} - Bread is ready""".format(combine_ingredients.strftime(d_format),fold1.strftime(d_format),fold2.strftime(d_format),preheat.strftime(d_format),bake1.strftime(d_format),bake2.strftime(d_format),cool.strftime(d_format),bread_finished.strftime(d_format)))
