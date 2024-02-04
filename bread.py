@@ -71,7 +71,7 @@ st.sidebar.markdown("""1. Mix dry ingredients together
 3. Stretch and fold after 30 minutes.
 4. Place in cooler or on countertop for {} hours.
 5. After optional 15 minute cool, coil fold and shape dough.
-6. Put on parchment paper with corn meal and let rest for 2 hour final proof
+6. Put on parchment paper with corn meal and let rest for 3 hour final proof
 7. Preaheat oven with dutch oven inside to 470°.
 8. Once oven is preheated, lower to 450°, and place in dutch oven with lid on. After 35 minutes, remove lid for final 5 minute bake
 9. Remove bread from dutch oven and place on cooling rack. Wait 30 minutes before eating as steam inside is still baking bread.""".format(bulk_time))
