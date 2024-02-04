@@ -101,7 +101,7 @@ st.subheader('Ingredients List')
 st.text("""
 Flour:              {:,.2f} Cups ({:,.1f} grams)
 Salt (Kosher):      {:,.2f} Tablespoons ({:,.1f} grams)
-Yeast:              {:,.2f} Teaspoons ({:,.1f} grams)
+Instant Yeast:      {:,.2f} Teaspoons ({:,.1f} grams)
 Cold Water (37°):   {:,.2f} Cups ({:,.1f} grams)""".format(flour_cups,flour_grams,(salt_grams / salt_grams_per_tablespoon),salt_grams,(yeast_grams * yeast_grams_per_teaspoon),yeast_grams,(water_grams / water_grams_per_cup),water_grams))
 
 
