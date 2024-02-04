@@ -123,10 +123,10 @@ Wet your hands with cold water and do coil folds while dough is still in the bow
 
 Once in a ball, tuck the dough underneath itself on all sides to further form a ball shape, and to build tension.  
 
-Once finished, lift and put dough on parchment paper which has cornmeal or flour sprinkled on it. Lift parchment paper that now has the dough on it back into bowl and cover for another 2 hours.  
+Once finished, lift and put dough on parchment paper which has cornmeal or flour sprinkled on it. Lift parchment paper that now has the dough on it back into bowl and cover for another 3 hours.  
 You will need to preheat your oven after 1.5 hours to 470° with dutch oven inside.""".format(bulk_time))
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%205.mp4', start_time=0)
-st.markdown("""After 2 hours, score bread (scissors are easiest but not necessarily the best),lift parchment paper into dutch oven, dust top of dough with corn meal, place lid on dutch oven and place into oven at 450°.""")
+st.markdown("""After 3 hours, score bread (scissors are easiest but not necessarily the best),lift parchment paper into dutch oven, dust top of dough with corn meal, place lid on dutch oven and place into oven at 450°.""")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%206.mp4', start_time=0)
 st.markdown(" Bake for 35 minutes with lid on, and 5 minutes with the lid off.")
 st.video('https://raw.githubusercontent.com/rhug123/bread-app/main/Videos/Bread%20Video%207.mp4', start_time=0)
