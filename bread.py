@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 import datetime as dt
 import time
 import pytz
@@ -45,7 +46,7 @@ minute = t.minute
 bulk_time = 17 if cooler_bag == 'yes' else 14
 start_date = st.sidebar.date_input('Start Date',dt.date(year,month,day))
 start_time = st.sidebar.time_input('Start Time', dt.time(hour,minute))
-start_date_time = dt.datetime.combine(start_date,start_time)
+start_date_time = dt.datetime.combine(start_date,start_time,tzinfo = tz)
 
 d_format = '%x %r'
 combine_ingredients = start_date_time
@@ -140,16 +141,24 @@ minutes_till_bake1 = (bake1 - preheat).seconds // 60
 minutes_till_bake2 = (bake2 - bake1).seconds // 60
 minutes_till_cool = (cool - bake2).seconds // 60
 
+headstart = (t - start_date_time) // dt.timedelta(minutes = 1)
+
+progress_texts = [':blue[time till stretch and fold]',':violet[fermentation time]',':blue[preheat oven]',':blue[bake for 35 minutes]',':blue[bake for 5 minutes with lid off]',':blue[let cool]']
+progress_times = [minutes_to_fold,minutes_to_ferment,minutes_till_preheat,minutes_till_bake1,minutes_till_bake2,minutes_till_cool]
+progress_times_array = np.where((np.array(progress_times).cumsum() - headstart) <= 0,0,np.array(progress_times))
 
 
-progress_texts = [':blue[time till stretch and fold]',':violet[fermentation time]',':blue[preheat oven]',':blue[bake for 35 minutes]',':blue[bake for 5 minutes with lid off]',':blue[let cool]',':blue[finished]']
-progress_times = [minutes_to_fold,minutes_to_ferment,minutes_till_preheat,minutes_till_bake1,minutes_till_bake2,minutes_till_cool,1]
 
-start = 0
+start = headstart * normalized_time
+start = max(0,start) if start < 1 else 1
 bar = st.sidebar.progress(0,'start')
-if st.sidebar.button("Start Making Bread", type="secondary"):
-    for texts,times in zip(progress_texts,progress_times):
+
+st.text(start)
+if st.sidebar.button('Select Time Above and Start'):
+    for texts,times in zip(progress_texts,progress_times_array):
         for i in range(times):
             bar.progress(round(start + normalized_time,1),texts)
             time.sleep(60)
             start += normalized_time
+    bar.progress(100,'finished')
+
