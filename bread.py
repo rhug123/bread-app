@@ -153,7 +153,8 @@ start = headstart * normalized_time
 start = max(0,start) if start < 1 else 1
 bar = st.sidebar.progress(0,'start')
 
-st.text(start)
+
+
 if st.sidebar.button('Select Time Above and Start'):
     for texts,times in zip(progress_texts,progress_times_array):
         for i in range(times):
