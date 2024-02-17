@@ -1,6 +1,6 @@
 streamlit
-numpy as np
-datetime as dt
+numpy
+datetime
 time
 pytz
 qrcode
