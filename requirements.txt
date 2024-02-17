@@ -1,6 +1,3 @@
-streamlit
-numpy
-datetime
-time
-pytz
-qrcode
+streamlit == 1.30.0
+numpy == 1.26.2
+qrcode == 7.4.2
