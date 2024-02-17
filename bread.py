@@ -3,6 +3,8 @@ import numpy as np
 import datetime as dt
 import time
 import pytz
+import qrcode
+from PIL import Image
 
 st.title('No Knead Bread')
 st.subheader('Using Cold Water - Minimal Mess')
@@ -162,4 +164,20 @@ if st.sidebar.button('Select Time Above and Start'):
             time.sleep(60)
             start += normalized_time
     bar.progress(100,'finished')
+
+ical_details = '''
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Time To Fold Bread
+DTSTART;TZID=America/New_York:{}
+DURATION:PT1H
+LOCATION:Bread
+END:VEVENT
+END:VCALENDAR
+'''.format(fold2.strftime('%Y%m%d') + 'T' + fold2.strftime('%H%M') + '00Z')
+
+img = qrcode.make(ical_details)
+st.sidebar.image(Image.fromarray(np.array(img)))
+
 
