@@ -10,7 +10,7 @@ st.set_page_config(
 st.title('Please pick recipe from the left side.')
 
 st.subheader('Fridge Method')
-st.write('easy and good tasting bread')
+st.write('Easy and good tasting bread')
 
 
 st.subheader('Cooler Method')
