@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
-st.title('Please pick recipe from the left side panel.')
+st.title('Please pick recipe from the left side.')
 
 st.subheader('Fridge Method')
 st.write('easy and good tasting bread')
